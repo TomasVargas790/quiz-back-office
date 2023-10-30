@@ -11,16 +11,20 @@ export default function Modal ({ isActive, setIsActive }) {
 
   return (
 
-        <div onClick={handleClick} className='z-3 p-12 l-0 r-0 top-0 bottom-0 fixed bg-black bg-opacity-70 w-screen h-screen'>
-            <form onSubmit={(e) => e.preventDefault()} >
+    <div className='z-3 p-12  flex justify-center items-center left-0 z-20 right-0 top-0 bottom-0 fixed bg-black bg-opacity-70 w-screen h-screen'>
+      <form onSubmit={(e) => {
+        e.preventDefault()
+        console.log('oa')
+      }} >
 
-                <div className="p-12 bg-slate-100 relative rounded-3xl bg-opacity-90 text-black m-auto w-4/12 justify-center items-center flex gap-4 flex-col">
-                    <button style={{ left: '85%', top: '10%' }} onClick={handleClick} className='absolute '><Image width='25' alt='Cerrar' src={icon} /> </button>
-                    <h1 className="text-3xl">Formulario zarpado</h1>
-                    <input className='' type="text" />
-                    <input className='' type="text" />
-                </div>
-            </form>
+        <div className="p-16 bg-slate-100 bg-opacity-90 relative rounded-3xl text-black justify-center items-center flex gap-4 flex-col">
+          <button type='submit' onClick={handleClick} className='self-end '><Image width='25' alt='Cerrar' src={icon} /> </button>
+          <h1 className="text-3xl">Formulario zarpado</h1>
+          <input className='text-white rounded-lg' type="text" />
+          <input className='text-white rounded-lg' type="text" />
+          <button className='bg-blue-400 p-2 rounded-lg' >Submit</button>
         </div>
+      </form>
+    </div>
   )
 }

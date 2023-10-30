@@ -24,7 +24,8 @@
   "eslintConfig": {
     "rules": {
       "react/react-in-jsx-scope":0,
-      "react/prop-types": 0
+      "react/prop-types": 0,
+      "import/no-absolute-path":0
     },
     "extends": [
       "standard",

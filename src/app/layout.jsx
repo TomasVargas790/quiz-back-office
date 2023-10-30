@@ -4,8 +4,8 @@ import { Inter } from 'next/font/google'
 import { ChakraProvider } from '@chakra-ui/react'
 import theme from '@/theme/theme'
 import Header from '@/components/Header'
-
-const inter = Inter({ subsets: ['latin'] })
+import { ProvideTheme } from '../context/ProvideTheme'
+// const inter = Inter({ subsets: ['latin'] })
 
 /* export const metadata = {
   title: 'Create Next App',
@@ -17,8 +17,9 @@ export default function RootLayout ({ children }) {
     <html lang="en">
       <body className='box-border p-0 m-0 flex max-w-screen max-h-screen min-w-screen min-h-screen justify-center items-center flex-col' >
         <ChakraProvider theme={theme}>
-        <Header/>
-          {children}
+          <ProvideTheme>
+            {children}
+            </ProvideTheme>
         </ChakraProvider>
       </body>
     </html>

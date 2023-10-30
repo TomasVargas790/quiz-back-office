@@ -7,7 +7,6 @@ export default function useCloseModal (isActive, setIsActive) {
   }, [isActive])
 
   useEffect(() => {
-    console.log(document.body)
     document.body.addEventListener('keydown', closeOnEscapeKeyDown)
     return function cleanup () {
       document.body.removeEventListener('keydown', closeOnEscapeKeyDown)
